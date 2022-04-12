@@ -8,6 +8,7 @@ class Jumbotron extends StatelessWidget {
       children: <Widget>[
         header(),
         infoSerie(),
+        buttonGroup(),
       ]
     );
   }
@@ -56,6 +57,39 @@ class Jumbotron extends StatelessWidget {
         SizedBox(width: 6.0),
         Text('Adolescentes', style: TextStyle(color: Colors.white, fontSize: 10.0)),
       ]
+    );
+  }
+
+  Widget buttonGroup() {
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 15.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          Column(
+            children: <Widget>[
+              Icon(Icons.check, color: Colors.white),
+              SizedBox(height: 3.0),
+              Text("Mi lista",
+                   style: TextStyle(color: Colors.white, fontSize: 10.0))
+            ]
+          ),
+          FlatButton.icon(
+            onPressed: (){},
+            color: Colors.white,
+            icon: Icon(Icons.play_arrow, color: Colors.black),
+            label: Text("Reproducir")
+          ),
+          Column(
+            children: <Widget>[
+              Icon(Icons.info_outline, color: Colors.white),
+              SizedBox(height: 3.0),
+              Text("Información",
+                   style: TextStyle(color: Colors.white, fontSize: 10.0)),
+            ]
+          ),
+        ],
+      )
     );
   }
 }
